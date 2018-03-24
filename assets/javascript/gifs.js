@@ -21,7 +21,7 @@ function renderButtons(){
     $('#interest-buttons').append(b);
 
 }
-};
+}
 
 $('#submit').on("click", function(){
 
@@ -33,11 +33,11 @@ $('#submit').on("click", function(){
 
     interests.push(newint);
 
-    //console.log(interests);
+    console.log(interests);
 
     var btn = $('<button>' + newint + '</button>')
 
-    b.val(newint);
+    btn.val(newint);
 
     btn.addClass("btn btn-info");
 
