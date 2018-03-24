@@ -1,3 +1,11 @@
 body{
     text-align: center;
+    background-image: url("../images/45degreee_fabric.png");
+
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    border: 3px solid red;
 }

@@ -1,5 +1,5 @@
 
-    var p, animalImage, animalDiv;
+    var p, gifImage, gifDiv;
 
     var interests = ["Music", "Bodybuilding",  "R&B", "Singing", "Cars", "Fitness", "Food", "Relaxation", "HGTV"];
 
@@ -67,34 +67,34 @@ $('#submit').on("click", function(){
 
          for (var i = 0; i < results.length; i++) {
 
-           /*var*/ animalDiv = $("<div>");
+           /*var*/ gifDiv = $("<div>");
 
            /*var*/ p = $('<p>');
 
            p.text("Rating: " + results[i].rating);
 
-           /*var*/ animalImage = $("<img>");
+           /*var*/ gifImage = $("<img>");
 
-           animalImage.attr("src", results[i].images.fixed_height.url);
+           gifImage.attr("src", results[i].images.fixed_height_still.url);
 
-           animalImage.attr({'data-state':'animate'});
+           gifImage.attr({'data-state':'still'});
 
-           animalImage.addClass("gif");
+           gifImage.addClass("gif");
 
            //console.log(results[i].images.fixed_height.url);
 
-           animalImage.attr("data-still", results[i].images.fixed_height_still.url);
+           gifImage.attr("data-still", results[i].images.fixed_height_still.url);
 
-           animalImage.attr("data-animate", results[i].images.fixed_height.url);
+           gifImage.attr("data-animate", results[i].images.fixed_height.url);
 
            //console.log(results[i].images.fixed_height_still.url);
-           console.log(animalImage);
+           console.log(gifImage);
 
-           animalDiv.append(p);
+           gifDiv.append(gifImage);
 
-           animalDiv.append(animalImage);
+           gifDiv.append(p);
 
-           $('#gifs-appear-here').append(animalDiv);
+           $('#gifs-appear-here').append(gifDiv);
 
          }
 
