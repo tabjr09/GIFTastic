@@ -10,7 +10,7 @@ for(i = 0; i< interests.length; i++){
 
     b.attr("data-element", interests[i]);
 
-    b.addClass("button");
+    b.addClass("btn btn-info");
 
 
     $('#interest-buttons').append(b);
@@ -34,7 +34,7 @@ $('#submit').on("click", function(){
 
     b.val(newint);
 
-    btn.addClass("button");
+    btn.addClass("btn btn-info");
 
     btn.attr("data-element", newint);
 
@@ -47,7 +47,7 @@ $('#submit').on("click", function(){
   
 })
     
-    $(document).on("click", ".button", function() {
+    $(document).on("click", ".btn", function() {
 
         console.log($(this).attr("data-element"));
     
