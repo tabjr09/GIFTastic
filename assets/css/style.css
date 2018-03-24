@@ -4,8 +4,12 @@ body{
 
 }
 
-img{
+.gif{
     width: 300px;
     height: 300px;
-    border: 3px solid red;
+    border: 3px solid grey;
+}
+
+.btn{
+    margin: 10px;
 }

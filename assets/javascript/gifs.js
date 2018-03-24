@@ -1,10 +1,15 @@
 
-    var p, gifImage, gifDiv;
+    
 
-    var interests = ["Music", "Bodybuilding",  "R&B", "Singing", "Cars", "Fitness", "Food", "Relaxation", "HGTV"];
+var interests = ["Music", "Bodybuilding",  "R&B", "Singing", "Cars", "Fitness", "Food", "Relaxation", "HGTV"];
 
-for(i = 0; i< interests.length; i++){
-    var b = $('<button>' + interests[i] + '</button>')
+
+renderButtons();
+
+function renderButtons(){
+
+  for(i = 0; i< interests.length; i++){
+    var b = $('<button>' + interests[i] + '</button>');
 
     b.val(interests[i]);
 
@@ -16,11 +21,11 @@ for(i = 0; i< interests.length; i++){
     $('#interest-buttons').append(b);
 
 }
+};
 
 $('#submit').on("click", function(){
 
   
-
     var newint = $('#user-interest').val().trim();
 
     if(newint !== ""){
@@ -47,7 +52,7 @@ $('#submit').on("click", function(){
   
 })
     
-    $(document).on("click", ".btn", function() {
+    $(document).on("click", ".btn-info", function() {
 
         console.log($(this).attr("data-element"));
     
@@ -61,27 +66,29 @@ $('#submit').on("click", function(){
         method: "GET"
       }).then(function(response) {
   
-        //console.log(response);
+        console.log(response);
 
         var results = response.data;
 
          for (var i = 0; i < results.length; i++) {
 
-           /*var*/ gifDiv = $("<div>");
+           var gifDiv = $("<div class='col-lg-4'>");
 
-           /*var*/ p = $('<p>');
+           var title = $('<p>');
 
-           p.text("Rating: " + results[i].rating);
+           var rat = $('<p>');
 
-           /*var*/ gifImage = $("<img>");
+           title.text("Title: " + results[i].title);
+
+           rat.text("Rating: " + results[i].rating);
+
+           var gifImage = $("<img>");
 
            gifImage.attr("src", results[i].images.fixed_height_still.url);
 
            gifImage.attr({'data-state':'still'});
 
            gifImage.addClass("gif");
-
-           //console.log(results[i].images.fixed_height.url);
 
            gifImage.attr("data-still", results[i].images.fixed_height_still.url);
 
@@ -92,7 +99,9 @@ $('#submit').on("click", function(){
 
            gifDiv.append(gifImage);
 
-           gifDiv.append(p);
+           gifDiv.prepend(title);
+
+           gifDiv.append(rat);
 
            $('#gifs-appear-here').append(gifDiv);
 
